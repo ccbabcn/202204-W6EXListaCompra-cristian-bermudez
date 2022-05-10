@@ -11,6 +11,7 @@ function App() {
       <main className="row py-4">
         <List />
       </main>
+      <Form />
     </div>
   );
 }
