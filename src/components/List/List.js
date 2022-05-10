@@ -1,5 +1,5 @@
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-import shoppinList from "../../data/data";
 import Item from "../Item/Item";
 
 const StyledArticles = styled.ul`
@@ -35,10 +35,12 @@ const StyledTotal = styled.span`
 `;
 
 const List = () => {
+  const initialArray = useSelector((state) => state.shoppingList);
+
   return (
     <>
       <StyledArticles className="list-unstyled col-12">
-        {shoppinList.map((item) => (
+        {initialArray.map((item) => (
           <StyledArticle key={item.id} className="row">
             <Item item={item} />
           </StyledArticle>
